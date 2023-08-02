@@ -43,6 +43,21 @@ body {
   border-bottom: 1px solid gray;
 }
 
+#produtos{
+  border-bottom: 1px solid gray;
+}
+
+
+#produtos label{
+
+  margin-left: 10%;
+  font-size: 130%;
+  margin-bottom: 1.5%;
+  width: 10%;
+  border: 1px solid rgba(255, 20, 145, 0);
+
+}
+
 #notas:hover{
   color: gray;
 }
@@ -65,5 +80,16 @@ body {
   float: left;
   margin-left: 10%;
 
+}
+
+#superior #parte3{
+  border: 1px solid rgba(255, 20, 145, 0);
+  float: left;
+  margin-left: 10%;
+
+}
+
+#nota_dados{
+  font-size: 130%;
 }
 
