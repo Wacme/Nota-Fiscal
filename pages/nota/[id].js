@@ -28,32 +28,16 @@ export default function GetNota(){
        
   
         return(
-          <div id="produtos" style={{fontSize:"80%",marginTop:"1%"}}>
-            <label>
-              {item['Item Descricao']}
-            </label>
-  
-            <label style={{marginLeft:"1.5%"}}>
-              {item['Item Codigo']}
-            </label>
-  
-            <label style={{marginLeft:"6%"}}>
-              {item['Item Quantidade']}
-            </label>
-  
-            <label style={{marginLeft:"5%"}}> 
-              R${item['Item Valor']}
-            </label>
-  
-            <label style={{marginLeft:"3%"}}>
-              R${item['Item Total']}
-            </label>
 
-            <label style={{marginLeft:"2%"}}>
-              {item['Item NCM']}
-            </label>
+            <tr>
+            <td> {item['Item Descricao']}</td>
+            <td> {item['Item Codigo']}</td>
+            <td>{item['Item Quantidade']}</td>
+            <td>R${item['Item Valor']}</td>
+            <td>R${item['Item Total']}</td>
+            <td>{item['Item NCM']}</td>
+            </tr>
 
-          </div>
         )
     }
 
@@ -107,43 +91,28 @@ export default function GetNota(){
 
             <div style={{marginTop:"2%"}}>
                 <h4>Produtos</h4>
-            <div id="resultados">
-                <div id="labels"  style={{fontSize:"80%"}}>
 
-                <label>
-                    Nome
-                </label>
 
-                <label>
-                   SKU
-                </label>
 
-                <label>
-                    Quantidade
-                </label>
-
-                <label>
-                    Preço Un
-                </label>
-
-                <label>
-                    Total
-                </label>
-
-                <label>
-                    NCM
-                </label>
-                
-
-                </div>
-
-                </div>
-
+            <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">SKU</th>
+                <th scope="col">Quantidade</th>
+                <th scope="col">Preço Un</th>
+                <th scope="col">Total</th>
+                <th scope="col">NCM</th>
+                </tr>
+            </thead>
+            <tbody>
                 {produtos.map((produto)=>(
                     <>
                     <Item item={produto} />
                     </>
                 ))}
+            </tbody>
+            </table>
 
             </div>
 

@@ -48,28 +48,16 @@ export default function Home() {
         Router.push(`/nota/${item['_id']}`)
       }
 
-      return(
-        <div id="notas" onClick={click}>
-          <label>
-            {item['Numero Nota']}
-          </label>
+      return( 
 
-          <label style={{marginLeft:"7%"}}>
-            {item['Data emissao']}
-          </label>
+        <tr onClick={click} id="item_tabela">
+        <td> {item['Numero Nota']}</td>
+        <td> {item['Data emissao']}</td>
+        <td>{item['Contato']}</td>
+        <td>{item['UF']}</td>
+        <td>R${item['Valor Nota']}</td>
+        </tr>
 
-          <label style={{marginLeft:"9%"}}>
-            {item['Contato']}
-          </label>
-
-          <label style={{marginLeft:"5%"}}> 
-            {item['UF']}
-          </label>
-
-          <label style={{marginLeft:"1%"}}>
-            R${item['Valor Nota']}
-          </label>
-        </div>
       )
   }
 
@@ -82,41 +70,26 @@ export default function Home() {
       </Head>
 
       <Pesquisar />
+      
 
-      <div id="resultados">
-        <div id="labels">
-
-          <label>
-            Número
-          </label>
-
-          <label>
-            Data Emissão
-          </label>
-
-          <label>
-            Cliente
-          </label>
-
-          <label>
-            UF
-          </label>
-
-          <label>
-            Valor
-          </label>
-          
-
-        </div>
-
-      </div>
-
-      {notas.map((nota)=>(
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Número</th>
+      <th scope="col">Data Emissão</th>
+      <th scope="col">Cliente</th>
+      <th scope="col">UF</th>
+      <th scope="col">Valor</th>
+    </tr>
+  </thead>
+  <tbody>
+  {notas.map((nota)=>(
         <>
           <Item item={nota} />
         </>
-      ))}
-      
+    ))}
+  </tbody>
+</table>
    
     </div>
   )
